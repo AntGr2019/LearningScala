@@ -1,0 +1,20 @@
+def fibs(num: Int): Long = {
+  def go(num: Int, acc1: Long, acc2: Long):Long = {
+    if (num == 0) 0
+    else if (num == 1) 1
+    else if (num == 2) {
+      println(acc2 + " + " + acc1)
+      acc1
+    }
+    else {
+      print(acc2 + " + ")
+      go(num-1, acc1+acc2, acc1)
+    }
+  }
+  go(num, 1, 1)
+}
+
+val fibres = fibs(12)
+
+//1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 + 55 + 89 + 144
+//fibres: Long = 144
